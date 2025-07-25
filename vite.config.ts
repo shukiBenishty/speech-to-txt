@@ -10,5 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  base: "https://shukiBenishty.github.io/speachToTxt/"
+  base: "https://shukiBenishty.github.io/speech-to-txt/"
 })
