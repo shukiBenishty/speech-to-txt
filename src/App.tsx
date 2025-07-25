@@ -25,6 +25,7 @@ import { HorizontalRule } from "@/components/tiptap-node/horizontal-rule-node/ho
 import { handleImageUpload, MAX_FILE_SIZE } from "@/lib/tiptap-utils"
 import { EditorContext, useEditor } from '@tiptap/react';
 import { Interim } from './Mark';
+import { Placeholder } from '@tiptap/extensions'
 
 
 export default function App() {
@@ -65,7 +66,10 @@ export default function App() {
         upload: handleImageUpload,
         onError: (error) => console.error("Upload failed:", error),
       }),
-      Interim
+      Interim,
+      Placeholder.configure({
+        placeholder: "כאן כותבים..."
+      })
     ],
     // content: content,
     onUpdate: () => {
@@ -77,7 +81,7 @@ export default function App() {
       <Speech editor={editor} />
       <EditorContext.Provider value={{ editor: editor }}>
         <SimpleEditor
-          content={"sssss"}
+          content={""}
         />
       </EditorContext.Provider>
 
